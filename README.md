@@ -35,8 +35,6 @@
 
   の日本語的解釈。
 
-* [Gitのコミットメッセージを絵文字から始める - Qiita/pocotan001](http://qiita.com/pocotan001/items/775cc77087be5562cc56)
-
 * [p1ch-jp/emoji-commit-message-guideline.md](https://gist.github.com/p1ch-jp/2912dc157b53449f7d1b)
 
   `:sparkles:` :sparkles: は、[angularの`feat`](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#type)の代用として使えそうに見える。
