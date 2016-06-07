@@ -43,6 +43,58 @@
 
   ほか、分かりやすい絵文字集
 
+ふろく
+---
+* `npm version`
+
+  ```bash
+  mkdir foo && cd foo
+  git init && npm init -y
+  # { ... "version": "1.0.0", ... }
+
+  npm version patch
+  # v1.0.1
+  npm version prepatch
+  # v1.0.2-0
+  npm version prerelease
+  # v1.0.2-1
+  npm version patch
+  # v1.0.2
+
+  npm version preminor
+  # v1.1.0-0
+  npm version prerelease
+  # v1.1.0-1
+  npm version minor
+  # v1.1.0
+
+  npm version premajor
+  # v2.0.0-0
+  npm version prerelease
+  # v2.0.0-1
+  npm version major
+  # v2.0.0
+
+  npm version prerelease
+  # v2.0.1-0
+  npm version prerelease
+  # v2.0.1-1
+
+  git log --oneline
+  # 160b19a 2.0.1-1
+  # 16b3a14 2.0.1-0
+  # 54f6115 2.0.0
+  # c147134 2.0.0-1
+  # 3078dc3 2.0.0-0
+  # d19f800 1.1.0
+  # 361a4ce 1.1.0-1
+  # f5e280e 1.1.0-0
+  # 78f78fd 1.0.2
+  # 6d1acab 1.0.2-1
+  # ce787fc 1.0.2-0
+  # 6350d55 1.0.1
+  ```
+
 License
 ---
 [MIT](http://59naga.mit-license.org/)
