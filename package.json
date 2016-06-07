@@ -5,6 +5,7 @@
   "scripts": {
     "start": "mocha test.js --watch",
     "test": "mocha test.js",
+    "lint": "xo",
     "postversion": "git push --follow-tags && conventional-github-releaser -p atom -r 0"
   },
   "repository": {
@@ -17,6 +18,7 @@
   "homepage": "https://github.com/59798/emoji-commit-and-releases#readme",
   "devDependencies": {
     "conventional-github-releaser": "^1.1.2",
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "xo": "^0.15.1"
   }
 }
