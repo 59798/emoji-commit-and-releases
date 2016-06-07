@@ -7,6 +7,35 @@
   </a>
 </p>
 
+[conventional-changelog-atom/convention.md](https://github.com/conventional-changelog/conventional-changelog-atom/blob/master/convention.md)
+---
+| emoji | raw | 説明 |
+|:---:|---|---|
+| :bug:                | `:bug:`               | バグ修正
+| :arrow_up:           | `:arrow_up:`          | 依存の更新
+| :arrow_down:         | `:arrow_down:`        | 依存のバージョン調整
+| :lock:               | `:lock:`              | セキュリティに関する変更
+| :racehorse:          | `:racehorse:`         | パフォーマンス改善
+| :non-potable_water:  | `:non-potable_water:` | メモリリーク修正
+| :penguin:            | `:penguin:`           | `Linux`に関する修正
+| :apple:              | `:apple:`             | `OSX`に関する修正
+| :checkered_flag:     | `:checkered_flag:`    | `Windows`に関する修正
+| :art:                | `:art:`               | リファクタリングやコード形式の変更
+| :memo:               | `:memo:`              | ドキュメント追加、変更
+| :fire:               | `:fire:`              | コードかファイルの削除
+| :white_check_mark:   | `:white_check_mark:`  | テストを追加
+| :green_heart:        | `:green_heart:`       | CIに関する修正
+| :shirt:              | `:shirt:`             | linterの警告を修正
+
+**うち、patchに該当するもの**
+:bug: :arrow_up: :arrow_down: :lock: :racehorse: :non-potable_water: :penguin: :apple: :checkered_flag:
+
+**うち、minorに該当するもの**
+N/A
+
+**該当しない（いわゆる`chore`）**
+:art: :memo: :fire: :white_check_mark: :green_heart: :shirt:
+
 参考文献
 ---
 * [conventional-changelog-atom/convention.md](https://github.com/conventional-changelog/conventional-changelog-atom/blob/master/convention.md)
