@@ -2,9 +2,10 @@
   "name": "emoji-commit-and-releases",
   "version": "0.0.0",
   "private": true,
+  "main": "lib",
   "scripts": {
-    "start": "mocha test.js --watch",
-    "test": "mocha test.js",
+    "start": "mocha --watch",
+    "test": "mocha",
     "lint": "xo",
     "postversion": "git push --follow-tags && conventional-github-releaser -p atom -r 0"
   },
