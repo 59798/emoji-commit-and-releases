@@ -4,12 +4,14 @@
   "private": true,
   "main": "lib",
   "scripts": {
-    "start": "mocha --watch",
-    "test": "mocha",
+    "start": "mocha --require babel-register --watch",
+    "test": "mocha --require babel-register",
     "lint": "xo",
     "postversion": "git push --follow-tags && conventional-github-releaser -p atom -r 0"
   },
   "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babel-register": "^6.9.0",
     "conventional-github-releaser": "^1.1.2",
     "mocha": "^2.5.3",
     "xo": "^0.15.1"
@@ -17,6 +19,11 @@
   "xo": {
     "env": "mocha",
     "space": 2
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   },
   "repository": {
     "type": "git",
