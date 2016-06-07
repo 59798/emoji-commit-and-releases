@@ -1,0 +1,13 @@
+# windows, osxの隠しファイル
+Thumbs.db
+.DS_Store
+
+# npm および bowerが生成する依存ライブラリ管理フォルダ
+node_modules
+bower_components
+
+# npm-scripts失敗時などのエラー内容の詳細
+npm-debug.log
+
+# 出荷用のコード。`npm publish`直前で生成するので、git管理しない。
+lib
