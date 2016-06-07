@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "test": "mocha test.js",
     "postversion": "git push --follow-tags && conventional-github-releaser -p atom -r 0"
   },
   "repository": {
@@ -14,6 +15,7 @@
   },
   "homepage": "https://github.com/59798/emoji-commit-and-releases#readme",
   "devDependencies": {
-    "conventional-github-releaser": "^1.1.2"
+    "conventional-github-releaser": "^1.1.2",
+    "mocha": "^2.5.3"
   }
 }
