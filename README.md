@@ -9,32 +9,82 @@
 
 [conventional-changelog-atom/convention.md](https://github.com/conventional-changelog/conventional-changelog-atom/blob/master/convention.md)
 ---
-| emoji | raw | 説明 |
+| emoji | raw | 説明(類似する[angular-commit-type]) |
 |:---:|---|---|
-| :bug:                | `:bug:`               | バグ修正
-| :arrow_up:           | `:arrow_up:`          | 依存の更新
-| :arrow_down:         | `:arrow_down:`        | 依存のバージョン調整
-| :lock:               | `:lock:`              | セキュリティに関する変更
-| :racehorse:          | `:racehorse:`         | パフォーマンス改善
-| :non-potable_water:  | `:non-potable_water:` | メモリリーク修正
-| :penguin:            | `:penguin:`           | `Linux`に関する修正
-| :apple:              | `:apple:`             | `OSX`に関する修正
-| :checkered_flag:     | `:checkered_flag:`    | `Windows`に関する修正
-| :art:                | `:art:`               | リファクタリングやコード形式の変更
-| :memo:               | `:memo:`              | ドキュメント追加、変更
-| :fire:               | `:fire:`              | コードかファイルの削除
-| :white_check_mark:   | `:white_check_mark:`  | テストを追加
-| :green_heart:        | `:green_heart:`       | CIに関する修正
-| :shirt:              | `:shirt:`             | linterの警告を修正
+| :bug:                | `:bug:`               | バグ修正 (`fix`)
+| :arrow_up:           | `:arrow_up:`          | 依存の更新 (影響度による)
+| :arrow_down:         | `:arrow_down:`        | 依存のバージョン調整 (同上)
+| :lock:               | `:lock:`              | セキュリティに関する変更 (`fix`)
+| :racehorse:          | `:racehorse:`         | パフォーマンス改善 (`perf`)
+| :non-potable_water:  | `:non-potable_water:` | メモリリーク修正 (`perf`)
+| :penguin:            | `:penguin:`           | `Linux`に関する修正 (`fix`)
+| :apple:              | `:apple:`             | `OSX`に関する修正 (`fix`)
+| :checkered_flag:     | `:checkered_flag:`    | `Windows`に関する修正 (`fix`)
+| :art:                | `:art:`               | リファクタリングやコード形式の変更 (`refactor` or `style`)
+| :memo:               | `:memo:`              | ドキュメント追加、変更（誤字脱字修正ふくむ）(`docs`)
+| :fire:               | `:fire:`              | コードかファイルの削除(`chore`)
+| :white_check_mark:   | `:white_check_mark:`  | テストを追加 (`test`)
+| :green_heart:        | `:green_heart:`       | CIに関する修正 (`chore`)
+| :shirt:              | `:shirt:`             | linterの警告を修正(`refactor` or `style`)
 
 **うち、patchに該当するもの**
-:bug: :arrow_up: :arrow_down: :lock: :racehorse: :non-potable_water: :penguin: :apple: :checkered_flag:
+:arrow_up: :arrow_down: :bug: :lock: :racehorse: :non-potable_water: :penguin: :apple: :checkered_flag:
 
 **うち、minorに該当するもの**
-N/A
+:arrow_up: :arrow_down:
 
 **該当しない（いわゆる`chore`）**
 :art: :memo: :fire: :white_check_mark: :green_heart: :shirt:
+
+非公式（筆者が推奨したい追加のemoji）
+---
+
+| emoji | raw | 説明(類似する[angular-commit-type]) |
+|:---:|---|---|
+| :wrench: :package:	         | `:wrench:` `:package:`           | 開発環境の整備、変更。(`chore`)
+| :heavy_plus_sign: :sparkles: | `:heavy_plus_sign:` `:sparkles:` | 機能追加(`feat`)
+| :heavy_minus_sign: :zap:     | `:heavy_minus_sign:` `:zap:`     | 機能削除(`BREAKING CHANGE`)
+| :lipstick:                   | `:lipstick:`                     | cssなどのGUIに関する調整(影響度による)。
+| :globe_with_meridians:       | `:globe_with_meridians:`         | 言語に関する変更(影響度による)
+| :copyright:                  | `:copyright:`                    | ライセンスに関する変更(`chore`)
+| :construction:               | `:construction:`                 | 作業中(N/A)
+
+**うち、patchに該当するもの**
+:globe_with_meridians: :lipstick:
+
+**うち、minorに該当するもの**
+:globe_with_meridians: :lipstick: :heavy_plus_sign: :sparkles: :heavy_minus_sign: :zap:
+
+**該当しない（いわゆる`chore`）**
+:globe_with_meridians: :lipstick: :wrench: :package: :copyright: :construction:
+
+[angular-commit-type]: https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#type
+
+コミットを書くときの留意点
+---
+  * emojiが増えすぎないように気をつける
+
+    [releases](https://github.com/59798/emoji-commit-and-releases/releases/tag/v0.0.1)を見ると分かるが、あまりにemojiを使いすぎるとかえって読みづらくなる。
+
+    `chore`, `feat`, `fix` に使うemojiをあらかじめ決めておくこと。
+
+  * コミットメッセージにはWhy（動機、原因）を含めることが望ましい。
+
+    コミットの情報量を増やすこと。
+
+    ```bash
+    # bad
+    git commit -m ':wrench: file.txtを追加（なぜ？）'
+
+    # good
+    git commit -m ':white_check_mark: testのfixtureとしてfile.txtを追加'
+
+    # bad
+    git commit -m ':wrench: file.txtを削除（なぜ？）'
+
+    # good
+    git commit -m ':fire: テストで使用しなくなったfile.txtを削除'
+    ```
 
 参考文献
 ---
@@ -74,7 +124,7 @@ N/A
 
 * [Commit Message Format - conventional-changelog-angular/convention.md](https://github.com/conventional-changelog/conventional-changelog-angular/blob/master/convention.md#commit-message-format)
 
-  Angularのコミットメッセージ規約。atomのように絵文字を使わないが、分類の仕方が洗練されている。また、`scope`を使って変更対象を明確に表現できる。
+  Angularのコミットメッセージ規約。atomのように絵文字を使わないが、分類の仕方が洗練されている。また、`scope`を使って変更対象を明確に表現できる。[原文](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#type)
 
 * [npmで成果物をsemantic-release :rocket: - azu](http://azu.github.io/slide/niku_sushi/npm-semantic-release.html)
 
@@ -85,9 +135,9 @@ N/A
 ---
 * `npm version`
 
-  * `patch`: バグ修正、性能改善、セキリティ修正など、`minor`でない粒度のもの
-  * `minor`: 機能追加、機能削除、破壊的変更（`BREAKING CHANGE`）
-  * `major`: APIの大掛かりな変更。１からプロジェクトを作りなおした時など
+  * `patch`: **調整**。バグ修正、性能改善、動作の小さな変更、セキリティ修正など、`minor`でない粒度のもの
+  * `minor`: **変更**。機能追加、機能削除、破壊的変更（`BREAKING CHANGE`）
+  * `major`: **リニューアル**。 APIの大掛かりな変更。デザインの一新。１からプロジェクトを作りなおした時など
 
   ```bash
   mkdir foo && cd foo
