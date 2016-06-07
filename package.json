@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "start": "mocha test.js --watch",
     "test": "mocha test.js",
     "postversion": "git push --follow-tags && conventional-github-releaser -p atom -r 0"
   },
