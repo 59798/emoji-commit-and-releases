@@ -1,6 +1,12 @@
 絵文字コミットについて
 ---
 
+<p align="right">
+  <a href="https://travis-ci.org/59798/emoji-commit-and-releases">
+    <img src="http://img.shields.io/travis/59798/emoji-commit-and-releases.svg?style=flat-square">
+  </a>
+</p>
+
 参考文献
 ---
 * [conventional-changelog-atom/convention.md](https://github.com/conventional-changelog/conventional-changelog-atom/blob/master/convention.md)
