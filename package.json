@@ -4,8 +4,8 @@
   "private": true,
   "main": "lib",
   "scripts": {
-    "start": "mocha --require babel-register --require babel-polyfill --watch",
-    "test": "mocha --require babel-register --require babel-polyfill",
+    "start": "mocha --watch",
+    "test": "mocha",
     "cover": "nyc --reporter=lcov --reporter=text npm test",
     "lint": "xo",
     "build": "cross-env NODE_ENV=production babel src --out-dir lib",
