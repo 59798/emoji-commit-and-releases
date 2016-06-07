@@ -1,0 +1,19 @@
+{
+  "name": "emoji-commit-and-releases",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "postversion": "git push --follow-tags && conventional-github-releaser -p atom -r 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/59798/emoji-commit-and-releases.git"
+  },
+  "bugs": {
+    "url": "https://github.com/59798/emoji-commit-and-releases/issues"
+  },
+  "homepage": "https://github.com/59798/emoji-commit-and-releases#readme",
+  "devDependencies": {
+    "conventional-github-releaser": "^1.1.2"
+  }
+}
