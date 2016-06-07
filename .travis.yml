@@ -1,0 +1,50 @@
+# メールでビルド結果を通知しない
+notifications:
+  email: false
+
+# コンテナベースの環境を使う。ビルド開始まで時間の短縮
+# 参照： http://teppeis.hatenablog.com/entry/2015/04/recent-travis-yml
+sudo: false
+
+# 依存モジュールのキャッシュ。`npm install`を省略し、ビルド時間を短縮する
+cache:
+  directories:
+    - node_modules
+
+# `git tag v0.0.0 && git push --tags`はビルドしない
+branches:
+  except:
+    - /^v[0-9]/
+
+# 言語設定
+language: node_js
+# npmのバージョンを3に固定する（2でインストールに失敗するモジュールが多い）
+before_install:
+  - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
+# v-0は、2016にLTS（Long Term Support）が終了するので、対象に含めない
+# https://github.com/nodejs/LTS#lts_schedule
+node_js:
+  - 4
+
+# package.jsonに含まないモジュールを削除する。キャッシュ整理
+# それでも、たまに古いモジュールが残ったままビルドが実行されたりするので、その場合はTravisのSettingsから直接キャッシュを消すこと
+before_script:
+  - npm prune
+
+# カバレッジを計測しながらのテスト、およびコード文体のチェック。どちらかが失敗した場合、deployしない
+script:
+  - npm run cover
+  - npm run lint
+
+# Travisに`npm publish`を代行させる。
+# 参照 https://docs.travis-ci.com/user/deployment/npm/
+before_deploy:
+  - npm run build
+deploy:
+  skip_cleanup: true # falseの場合、clone直後の状態に戻るため、libがアップロードされない
+  provider: npm
+  email: i59naga@icloud.com
+  api_key:
+    secure:
+  on:
+    node: 4
