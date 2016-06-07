@@ -92,7 +92,7 @@
 
   基本。コミット先頭に絵文字を使用した場合、[`github/releases`](https://github.com/59798/emoji-commit-and-releases/releases)には、箇条書きでグループ化して出力する。
 
-  `npm version`で`package.json:version`を更新し、`git tag v0.0.1`が自動で実行され、新しいコミット`v0.0.1`を作成する。
+  このレポジトリでは、`npm version`で`package.json:version`を更新し、`git tag v0.0.1`が自動で実行され、新しいコミット`v0.0.1`を作成する。
 
   そして、`package.json`に定義した`postversion`を実行してコミットのpushおよび、`github/releases`の更新を行う。
 
