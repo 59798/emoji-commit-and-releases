@@ -11,7 +11,24 @@
 ---
 * [conventional-changelog-atom/convention.md](https://github.com/conventional-changelog/conventional-changelog-atom/blob/master/convention.md)
 
-  基本。コミットの`github/releases`への自動整形へは、このフォーマットに従う必要がある。
+  基本。コミット先頭に絵文字を使用した場合、[releases](https://github.com/59798/emoji-commit-and-releases/releases)には、箇条書きでグループ化して出力する。
+
+  `npm version`で`package.json:version`を更新し、`git tag v0.0.1`が自動で実行され、新しいコミット`v0.0.1`を作成する。
+
+  そして、`package.json`に定義した`postversion`を実行してコミットのpushおよび、`github/release`の更新を行う。
+
+  > [npm version, preversion, postversionの使い分け - htanjo/Qiita](http://qiita.com/htanjo/items/d16d8531bc22e0a43217)
+
+  ```bash
+  npm version patch
+
+  # v0.0.1
+  # > emoji-commit-and-releases@0.0.1 postversion /Users/59naga/Downloads/emoji-commit-and-releases
+  # > git push --follow-tags && conventional-github-releaser -p atom -r 0
+  #
+  # ...
+  # * [new tag]         v0.0.1 -> v0.0.1
+  ```
 
 * [体言止めにする](https://gist.github.com/p1ch-jp/2912dc157b53449f7d1b#体言止めにする)
   > Use the present tense ("Add feature" not "Added feature")
