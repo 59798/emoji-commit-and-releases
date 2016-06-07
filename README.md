@@ -43,9 +43,22 @@
 
   ほか、分かりやすい絵文字集
 
+* [Commit Message Format - conventional-changelog-angular/convention.md](https://github.com/conventional-changelog/conventional-changelog-angular/blob/master/convention.md#commit-message-format)
+
+  Angularのコミットメッセージ規約。atomのように絵文字を使わないが、分類の仕方が洗練されている。また、`scope`を使って変更対象を明確に表現できる。
+
+* [npmで成果物をsemantic-release :rocket: - azu](http://azu.github.io/slide/niku_sushi/npm-semantic-release.html)
+
+  > Q. どうやってバージョンを決める?
+  > A. コミットメッセージを見て`feat`があるなら`minor`、`fix`なら`patch`と解析してsermverで自動的にあげる
+
 ふろく
 ---
 * `npm version`
+
+  * `patch`: バグ修正、性能改善、セキリティ修正など、`minor`でない粒度のもの
+  * `minor`: 機能追加、機能削除、破壊的変更（`BREAKING CHANGE`）
+  * `major`: APIの大掛かりな変更。１からプロジェクトを作りなおした時など
 
   ```bash
   mkdir foo && cd foo
