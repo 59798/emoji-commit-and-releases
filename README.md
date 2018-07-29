@@ -43,6 +43,7 @@
 |:---:|---|---|
 | :wrench: :package:	         | `:wrench:` `:package:`           | 開発環境の整備、変更。(`chore`)
 | :heavy_plus_sign: :sparkles: | `:heavy_plus_sign:` `:sparkles:` | 機能追加(`feat`)
+| :bangbang:                   | `:bangbang:`                     | 機能変更(`BREAKING CHANGE`)
 | :heavy_minus_sign: :zap:     | `:heavy_minus_sign:` `:zap:`     | 機能削除(`BREAKING CHANGE`)
 | :lipstick:                   | `:lipstick:`                     | cssなどのGUIに関する調整(影響度による)。
 | :globe_with_meridians:       | `:globe_with_meridians:`         | 言語に関する変更(影響度による)
